@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://nom8am8isvcv"]
+
+[ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="1_tolu6"]
+[ext_resource type="PackedScene" uid="uid://bohuje5c66dqh" path="res://Scenes/Components/Collectable.tscn" id="2_i7joh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wbme"]
+atlas = ExtResource("1_tolu6")
+region = Rect2(96, 96, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h81tu"]
+size = Vector2(14, 7)
+
+[node name="Log" type="Sprite2D"]
+y_sort_enabled = true
+texture = SubResource("AtlasTexture_5wbme")
+offset = Vector2(0, -5)
+
+[node name="Collectable" parent="." instance=ExtResource("2_i7joh")]
+collectable_name = "log"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]
+position = Vector2(0, -3.5)
+shape = SubResource("RectangleShape2D_h81tu")

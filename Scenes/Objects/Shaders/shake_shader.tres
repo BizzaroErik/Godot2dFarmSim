@@ -1,0 +1,9 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bs4j5k4vfo6er"]
+
+[ext_resource type="Shader" path="res://Scenes/Objects/Shaders/Shake.gdshader" id="1_ivrmk"]
+
+[resource]
+resource_local_to_scene = true
+shader = ExtResource("1_ivrmk")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0

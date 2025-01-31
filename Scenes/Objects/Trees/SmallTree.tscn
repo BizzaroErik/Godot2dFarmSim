@@ -1,0 +1,41 @@
+[gd_scene load_steps=9 format=3 uid="uid://ceycb8f032iut"]
+
+[ext_resource type="Material" uid="uid://bs4j5k4vfo6er" path="res://Scenes/Objects/Shaders/shake_shader.tres" id="1_myjcp"]
+[ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="1_si8cx"]
+[ext_resource type="PackedScene" uid="uid://d0ag7r888va2q" path="res://Scenes/Components/Hurtable.tscn" id="2_78xtv"]
+[ext_resource type="Script" path="res://Scripts/Environment/small_tree.gd" id="2_lsynt"]
+[ext_resource type="PackedScene" uid="uid://4vqn5j58vh6a" path="res://Scenes/Components/Health.tscn" id="3_p5vp1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ry45"]
+atlas = ExtResource("1_si8cx")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ya3fu"]
+radius = 4.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wsn0b"]
+size = Vector2(8, 22)
+
+[node name="SmallTree" type="Sprite2D"]
+material = ExtResource("1_myjcp")
+texture = SubResource("AtlasTexture_4ry45")
+offset = Vector2(0, -11)
+script = ExtResource("2_lsynt")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("CircleShape2D_ya3fu")
+
+[node name="Hurtable" parent="." instance=ExtResource("2_78xtv")]
+tool = 1
+
+[node name="HurtableCollisionShape2D" type="CollisionShape2D" parent="Hurtable"]
+position = Vector2(0, -11)
+shape = SubResource("RectangleShape2D_wsn0b")
+debug_color = Color(0.801293, 0.387418, 0.435635, 0.42)
+
+[node name="Health" parent="." instance=ExtResource("3_p5vp1")]
+start_health = 2
+current_health = 2
