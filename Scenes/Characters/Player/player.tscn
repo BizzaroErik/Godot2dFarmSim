@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_0jvk6"]
 [ext_resource type="Texture2D" uid="uid://bmxbhcna1t32j" path="res://Assets/Characters/Basic Charakter Spritesheet.png" id="1_bpwup"]
 [ext_resource type="Texture2D" uid="uid://cqktomicp4tfx" path="res://Assets/Characters/Basic Charakter Actions.png" id="2_akc6x"]
-[ext_resource type="Script" path="res://Scripts/Characters/Player/State/state_machine.gd" id="4_hrm1l"]
+[ext_resource type="Script" path="res://Scripts/Characters/State/state_machine.gd" id="4_hrm1l"]
 [ext_resource type="Texture2D" uid="uid://c352jksmenpt1" path="res://Assets/Characters/Premium Charakter Spritesheet.png" id="4_khuvl"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/idle.gd" id="5_p24ci"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/walking.gd" id="6_mr6lw"]
