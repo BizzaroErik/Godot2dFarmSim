@@ -28,7 +28,7 @@ func process_physics(delta: float) -> State:
 	return null
 
 func set_animation() -> void:
-	match player.look_dir:
+	match character.look_dir:
 		Vector2.UP:
 			sprite.play("chopping_back")
 			hit_component_collision_shape.position = Vector2(0, -8)

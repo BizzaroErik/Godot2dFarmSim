@@ -5,7 +5,7 @@ extends Node
 
 func init(parent: Player, sprite: AnimatedSprite2D) -> void:
 	for child in get_children():
-		child.player = parent
+		child.character = parent
 		child.sprite = sprite
 	change_state(starting_state)
 

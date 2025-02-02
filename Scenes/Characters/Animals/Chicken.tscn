@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://btgpqqnvbh2us"]
+[gd_scene load_steps=19 format=3 uid="uid://btgpqqnvbh2us"]
 
 [ext_resource type="Texture2D" uid="uid://puc3jerfiaut" path="res://Assets/Animals/Chicken/chicken brown.png" id="1_ovlpj"]
 [ext_resource type="Texture2D" uid="uid://ckxftdeyhsn2t" path="res://Assets/Animals/Chicken/chicken default.png" id="2_nsrxf"]
+[ext_resource type="Script" path="res://Scripts/Characters/State/state_machine.gd" id="3_uu8ne"]
+[ext_resource type="Script" path="res://Scripts/Characters/Animals/State/idle.gd" id="4_k17wi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxgja"]
 atlas = ExtResource("1_ovlpj")
@@ -118,8 +120,11 @@ offset = Vector2(0, -2)
 position = Vector2(-1, 1)
 shape = SubResource("CircleShape2D_t1vdu")
 
-[node name="state_machine" type="Node" parent="."]
+[node name="state_machine" type="Node" parent="." node_paths=PackedStringArray("starting_state")]
+script = ExtResource("3_uu8ne")
+starting_state = NodePath("idle")
 
 [node name="idle" type="Node" parent="state_machine"]
+script = ExtResource("4_k17wi")
 
 [node name="walk" type="Node" parent="state_machine"]

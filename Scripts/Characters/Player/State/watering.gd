@@ -20,7 +20,7 @@ func process_physics(delta: float) -> State:
 	return null
 
 func set_animation() -> void:
-	match player.look_dir:
+	match character.look_dir:
 		Vector2.UP:
 			sprite.play("watering_back")
 		Vector2.DOWN:

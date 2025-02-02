@@ -3,7 +3,7 @@ extends Node
 
 @export var move_speed: float = 400
 
-var player: Player
+var character: CharacterBody2D
 var sprite: AnimatedSprite2D
 
 func enter() -> void:

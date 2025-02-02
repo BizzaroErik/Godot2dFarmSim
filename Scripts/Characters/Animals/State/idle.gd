@@ -1,11 +1,6 @@
 extends State
 
 @export var walking_state: State
-@export var jumping_state: State
-@export var tilling_state: State
-@export var chopping_state: State
-@export var watering_state: State
-@export var mining_state: State
 
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 10.0
@@ -19,20 +14,7 @@ func exit() -> void:
 	sprite.stop()
 
 func process_input(event: InputEvent) -> State:
-	if Input.is_action_pressed("action"):
-		match character.hit_component.current_tool:
-			DataTypes.Tools.TillGround:
-				return tilling_state
-			DataTypes.Tools.ChopWood:
-				return chopping_state
-			DataTypes.Tools.WaterCrops:
-				return watering_state
-			DataTypes.Tools.MineRock:
-				return mining_state
-			DataTypes.Tools.None:
-				return null
-			_:
-				return null
+	return null
 
 	var input_dir := Input.get_vector("left", "right", "up", "down")
 	if character.look_dir != input_dir && input_dir != Vector2.ZERO:

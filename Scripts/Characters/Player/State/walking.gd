@@ -10,7 +10,7 @@ const JUMP_VELOCITY = 6.5
 
 
 func enter() -> void:
-	set_animation(player.look_dir)
+	set_animation(character.look_dir)
 
 func exit() -> void:
 	sprite.stop()
@@ -23,13 +23,13 @@ func process_frame(delta: float) -> State:
 
 func process_physics(delta: float) -> State:
 	var input_dir = _get_input_direction()
-	player.velocity = input_dir * SPEED
-	if player.look_dir != input_dir && input_dir != Vector2.ZERO:
+	character.velocity = input_dir * SPEED
+	if character.look_dir != input_dir && input_dir != Vector2.ZERO:
 		set_animation(input_dir)
-		player.look_dir = input_dir
-	player.move_and_slide()
+		character.look_dir = input_dir
+	character.move_and_slide()
 	
-	if player.velocity == Vector2.ZERO:
+	if character.velocity == Vector2.ZERO:
 		return idle_state
 	else:
 		return null
