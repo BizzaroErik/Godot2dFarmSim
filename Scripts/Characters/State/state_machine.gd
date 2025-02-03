@@ -3,7 +3,7 @@ extends Node
 @export var starting_state: State
 @export var current_state: State
 
-func init(parent: Player, sprite: AnimatedSprite2D) -> void:
+func init(parent: CharacterBody2D, sprite: AnimatedSprite2D) -> void:
 	for child in get_children():
 		child.character = parent
 		child.sprite = sprite
@@ -12,7 +12,6 @@ func init(parent: Player, sprite: AnimatedSprite2D) -> void:
 func change_state(new_state: State) -> void:
 	if current_state:
 		current_state.exit()
-	
 	current_state = new_state
 	current_state.enter()
 

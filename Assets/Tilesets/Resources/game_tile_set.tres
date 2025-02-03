@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://dgauf5mernihn"]
+[gd_resource type="TileSet" load_steps=20 format=3 uid="uid://dgauf5mernihn"]
 
 [ext_resource type="Texture2D" uid="uid://bmv2o8cgnn7qn" path="res://Assets/Tilesets/ground tiles/water frames/Water.png" id="1_8ja7e"]
 [ext_resource type="PackedScene" uid="uid://nu1fltqgyn8f" path="res://Scenes/Buildings/SmallHouse.tscn" id="1_fh8wf"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="4_jpeat"]
 [ext_resource type="PackedScene" uid="uid://du0pmvc61q0ow" path="res://Scenes/Objects/Rocks/SmallRock.tscn" id="5_busls"]
 [ext_resource type="Texture2D" uid="uid://dcg060b5t3mu" path="res://Assets/Objects/Mushrooms, Flowers, Stones.png" id="6_y7r7a"]
+[ext_resource type="PackedScene" uid="uid://btgpqqnvbh2us" path="res://Scenes/Characters/Animals/Chicken.tscn" id="7_hkvh6"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_7hs3v"]
 resource_name = "Houses"
@@ -67,6 +68,10 @@ texture = ExtResource("6_y7r7a")
 10:0/size_in_atlas = Vector2i(2, 3)
 10:0/0 = 0
 10:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-14.5, 5.5, -11, 4.5, 11, 4, 14, 7.5, 11, 20.5, 3, 23, -4, 18, -10.5, 17, -14.5, 13)
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_6ebct"]
+resource_name = "Characters"
+scenes/1/scene = ExtResource("7_hkvh6")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2f3p4"]
 texture = ExtResource("1_8ja7e")
@@ -586,3 +591,4 @@ sources/8 = SubResource("TileSetAtlasSource_uafqi")
 sources/0 = SubResource("TileSetScenesCollectionSource_7hs3v")
 sources/1 = SubResource("TileSetScenesCollectionSource_52h4m")
 sources/2 = SubResource("TileSetAtlasSource_yebrc")
+sources/3 = SubResource("TileSetScenesCollectionSource_6ebct")
