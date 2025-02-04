@@ -7,15 +7,13 @@ extends State
 var idle_state_timeout: bool = false
 
 func _ready() -> void:
-	print("should only run once?")
 	idle_state_timer.wait_time = idle_state_time_interval
 	idle_state_timer.timeout.connect(on_idle_state_timeout)
 	idle_state_timer.autostart = true
 	add_child(idle_state_timer)
 	
 func enter() -> void:
-	print("to get to the other side")
-	set_animation(character.look_dir)
+	set_animation()
 	idle_state_timeout = false
 	idle_state_timer.start()
 
@@ -32,20 +30,8 @@ func process_frame(delta: float) -> State:
 func process_physics(delta: float) -> State:
 	return null
 
-func set_animation(direction) -> void:
-	match direction:
-		Vector2.UP:
-			sprite.play("idle_back")
-		Vector2.DOWN:
-			sprite.play("idle_front")
-		Vector2.LEFT:
-			sprite.play("idle_left")
-		Vector2.RIGHT:
-			sprite.play("idle_right")
-		_:
-			print("played front idle for chicken")
-			sprite.play("idle_front")
+func set_animation() -> void:
+	sprite.play("idle_front")
 
 func on_idle_state_timeout() -> void:
-	print("timer timeout again")
 	idle_state_timeout = true

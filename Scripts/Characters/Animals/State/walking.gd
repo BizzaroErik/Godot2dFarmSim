@@ -4,12 +4,13 @@ extends State
 @export var navigation_agent: NavigationAgent2D
 @export var min_speed: float = 5.0
 @export var max_speed: float = 10.0
+@onready var animal: CharacterBody2D = $"../.."
 
 var speed: float
 
 func enter() -> void:
-	print("why did the chicken walk into the fields")
-	set_animation(character.look_dir)
+	navigation_agent.velocity_computed.connect(on_safe_velocity_computed)
+	set_animation()
 	#calls method during idle time after the first physics frame, smoother nav setup of agent
 	call_deferred("character_setup")
 
@@ -24,29 +25,27 @@ func process_frame(delta: float) -> State:
 
 func process_physics(delta: float) -> State:
 	if navigation_agent.is_navigation_finished():
-		print("navigation is finished")
 		character.velocity = Vector2.ZERO
-		return idle_state
+		if animal.walk_cycles >= animal.max_walk_cycle:
+			return idle_state
+		animal.walk_cycles += 1
 	
 	var target_position: Vector2 = navigation_agent.get_next_path_position()
 	var target_direction: Vector2 = character.global_position.direction_to(target_position)
-	sprite.flip_h = target_direction.x < 0
-	character.velocity = target_direction * speed
-	character.move_and_slide()
+	
+	var velocity = target_direction * speed
+	
+	if navigation_agent.avoidance_enabled:
+		sprite.flip_h = velocity.x < 0
+		navigation_agent.velocity = velocity
+	else:
+		character.velocity = velocity
+		character.move_and_slide()
+	
 	return null
 
-func set_animation(direction) -> void:
-	match direction:
-		Vector2.UP:
-			sprite.play("walk_back")
-		Vector2.DOWN:
-			sprite.play("walk_front")
-		Vector2.LEFT:
-			sprite.play("walk_left")
-		Vector2.RIGHT:
-			sprite.play("walk_right")
-		_:
-			sprite.play("walk")
+func set_animation() -> void:
+	sprite.play("walk")
 
 func character_setup() -> void:
 	await get_tree().physics_frame
@@ -57,3 +56,7 @@ func set_movement_target() -> void:
 	navigation_agent.target_position = target_position
 	speed = randf_range(min_speed, max_speed)
 	
+func on_safe_velocity_computed(safe_velocity: Vector2) -> void:
+	sprite.flip_h = safe_velocity.x < 0
+	character.velocity = safe_velocity
+	character.move_and_slide()

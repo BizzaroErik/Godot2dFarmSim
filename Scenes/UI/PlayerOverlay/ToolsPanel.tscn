@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ba8fxs28qtpq0"]
+
+[ext_resource type="Theme" uid="uid://d0u1btg7fmnt2" path="res://Scenes/UI/game_ui_theme.tres" id="1_hfsym"]
+
+[node name="ToolsPanel" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+theme = ExtResource("1_hfsym")

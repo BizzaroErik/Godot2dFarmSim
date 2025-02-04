@@ -1,0 +1,4 @@
+[gd_resource type="Theme" format=3 uid="uid://d0u1btg7fmnt2"]
+
+[resource]
+DarkWoodPanel/base_type = &"PanelContainer"

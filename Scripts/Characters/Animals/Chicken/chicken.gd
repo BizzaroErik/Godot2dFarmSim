@@ -1,5 +1,5 @@
 class_name Chicken
-extends CharacterBody2D
+extends NonPlayableCharacter
 
 @onready var state_machine: Node = $state_machine
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
@@ -7,7 +7,7 @@ extends CharacterBody2D
 var look_dir: Vector2 = Vector2.ZERO
 
 func _ready():
-	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	walk_cycles = randi_range(min_walk_cycle, max_walk_cycle)
 	state_machine.init(self, sprite)
 
 func _unhandled_input(event):

@@ -16,7 +16,7 @@ radius = 4.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wsn0b"]
 size = Vector2(8, 22)
 
-[node name="SmallTree" type="Sprite2D"]
+[node name="SmallTree" type="Sprite2D" groups=["navigation_polygon_source_geometry_group"]]
 material = ExtResource("1_myjcp")
 texture = SubResource("AtlasTexture_4ry45")
 offset = Vector2(0, -11)
