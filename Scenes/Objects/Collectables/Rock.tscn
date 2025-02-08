@@ -11,6 +11,7 @@ region = Rect2(16, 16, 16, 16)
 size = Vector2(7, 5)
 
 [node name="Rock" type="Sprite2D"]
+y_sort_enabled = true
 position = Vector2(1, -2)
 texture = SubResource("AtlasTexture_5wbme")
 

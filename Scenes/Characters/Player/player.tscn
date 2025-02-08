@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://dcphh72qtselo"]
+[gd_scene load_steps=72 format=3 uid="uid://dcphh72qtselo"]
 
 [ext_resource type="Script" path="res://Scripts/Characters/Player/player.gd" id="1_0jvk6"]
 [ext_resource type="Texture2D" uid="uid://bmxbhcna1t32j" path="res://Assets/Characters/Basic Charakter Spritesheet.png" id="1_bpwup"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/Characters/State/state_machine.gd" id="4_hrm1l"]
 [ext_resource type="Texture2D" uid="uid://c352jksmenpt1" path="res://Assets/Characters/Premium Charakter Spritesheet.png" id="4_khuvl"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/idle.gd" id="5_p24ci"]
+[ext_resource type="Texture2D" uid="uid://d1rcfhv4cvl32" path="res://Assets/Characters/character_actions.png" id="5_wqwa6"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/walking.gd" id="6_mr6lw"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/jumping.gd" id="7_ecdy6"]
 [ext_resource type="Script" path="res://Scripts/Characters/Player/State/tilling.gd" id="8_8k8m0"]
@@ -101,6 +102,38 @@ region = Rect2(0, 144, 48, 48)
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxnbh"]
 atlas = ExtResource("1_bpwup")
 region = Rect2(48, 144, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xf5j7"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjavi"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_winh2"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_186ae"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_skgmi"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(0, 576, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbdgs"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(48, 576, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puq76"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(0, 624, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qj1fm"]
+atlas = ExtResource("5_wqwa6")
+region = Rect2(48, 624, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5jhdm"]
 atlas = ExtResource("2_akc6x")
@@ -308,6 +341,50 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_xf5j7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjavi")
+}],
+"loop": true,
+"name": &"mining_back",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_winh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_186ae")
+}],
+"loop": true,
+"name": &"mining_front",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_skgmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bbdgs")
+}],
+"loop": true,
+"name": &"mining_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puq76")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qj1fm")
+}],
+"loop": true,
+"name": &"mining_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_5jhdm")
 }, {
 "duration": 1.0,
@@ -453,8 +530,10 @@ script = ExtResource("1_0jvk6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rdq4f")
-animation = &"chopping_back"
+animation = &"mining_left"
 autoplay = "idle_front"
+frame = 1
+frame_progress = 0.372827
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -502,7 +581,6 @@ idle_state = NodePath("../idle")
 hit_component_collision_shape = NodePath("../../Hitable/HitComponentCollisionShape2D")
 
 [node name="Hitable" parent="." instance=ExtResource("12_3dd4g")]
-current_tool = 5
 
 [node name="HitComponentCollisionShape2D" type="CollisionShape2D" parent="Hitable"]
 position = Vector2(0, -8)

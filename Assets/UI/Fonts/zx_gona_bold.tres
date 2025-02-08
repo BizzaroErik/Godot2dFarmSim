@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dpwsplxtaq1nt"]
+
+[ext_resource type="FontFile" uid="uid://cmysg0o7sr88l" path="res://Assets/UI/Fonts/ZX Gona Bold.ttf" id="1_okiua"]
+
+[resource]
+base_font = ExtResource("1_okiua")

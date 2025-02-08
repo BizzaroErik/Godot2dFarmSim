@@ -1,0 +1,117 @@
+[gd_scene load_steps=10 format=3 uid="uid://fmkto7eyhkoh"]
+
+[ext_resource type="Theme" uid="uid://d0u1btg7fmnt2" path="res://Scenes/UI/game_ui_theme.tres" id="1_on2yj"]
+[ext_resource type="Texture2D" uid="uid://b60j7f3h7tpht" path="res://Assets/Objects/Items/tools-n-meterial-items.png" id="2_0ioh1"]
+[ext_resource type="Script" path="res://Scripts/UI/PlayerOverlay/inventory_panel.gd" id="2_yx7ka"]
+[ext_resource type="Texture2D" uid="uid://cojnxxmucnaq2" path="res://Assets/Objects/Items/farming-Plants-items.png" id="3_qxml0"]
+[ext_resource type="Texture2D" uid="uid://ducak76gh5vpd" path="res://Assets/Objects/Items/egg-items.png" id="4_lbna1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjxe3"]
+atlas = ExtResource("2_0ioh1")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3aij5"]
+atlas = ExtResource("2_0ioh1")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aq73k"]
+atlas = ExtResource("3_qxml0")
+region = Rect2(16, 128, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l7rrj"]
+atlas = ExtResource("4_lbna1")
+region = Rect2(0, 0, 16, 16)
+
+[node name="InventoryPanel" type="PanelContainer"]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -81.0
+offset_right = 54.0
+offset_bottom = 81.0
+grow_vertical = 2
+theme = ExtResource("1_on2yj")
+theme_type_variation = &"DarkWoodPanel"
+script = ExtResource("2_yx7ka")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Logs" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Logs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_qjxe3")
+
+[node name="LogLabel" type="Label" parent="MarginContainer/VBoxContainer/Logs"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="Stone" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Stone"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_3aij5")
+
+[node name="StoneLabel" type="Label" parent="MarginContainer/VBoxContainer/Stone"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="Wheat" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_aq73k")
+
+[node name="WheatLabel" type="Label" parent="MarginContainer/VBoxContainer/Wheat"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"
+
+[node name="Egg" type="PanelContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme_type_variation = &"InventoryItemPanel"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Egg"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_l7rrj")
+
+[node name="EggLabel" type="Label" parent="MarginContainer/VBoxContainer/Egg"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_type_variation = &"InventoryLabel"
+text = "0"

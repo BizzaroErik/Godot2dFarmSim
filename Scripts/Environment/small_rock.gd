@@ -4,7 +4,7 @@ extends Sprite2D
 @onready var hurtable: Hurtable = $Hurtable
 @onready var health: Health = $Health
 
-var rock_scene = preload("res://Scenes/Objects/Rocks/Rock.tscn")
+var rock_scene = preload("res://Scenes/Objects/Collectables/Rock.tscn")
 
 func _ready() -> void:
 	hurtable.hurt.connect(on_hurt)
