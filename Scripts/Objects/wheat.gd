@@ -15,10 +15,11 @@ func _ready() -> void:
 	flowering_particles.emitting = false
 	hurtable.hurt.connect(on_hurt)
 	growth_cycle.crop_maturity.connect(on_crop_maturity)
+	growth_cycle.crop_harvesting.connect(on_crop_harvesting)
 
 func _process(delta: float) -> void:
 	growth_state = growth_cycle.get_current_growth_state()
-	sprite_2d.frame = start_frame + growth_state
+	sprite_2d.frame = start_frame - 1 + growth_state
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
 
@@ -33,3 +34,9 @@ func on_hurt(hit_damage: int) -> void:
 
 func on_crop_maturity() -> void:
 	flowering_particles.emitting = true
+
+func on_crop_harvesting() -> void:
+	var wheat = wheat_harvest_scene.instantiate() as Node2D
+	wheat.global_position = global_position
+	get_parent().add_child(wheat)
+	queue_free()

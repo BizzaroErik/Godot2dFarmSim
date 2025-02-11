@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bd4kqrsdotmek" path="res://Scenes/Objects/Collectables/Wheat.tscn" id="8_5rlg1"]
 [ext_resource type="PackedScene" uid="uid://ijdn4l214frw" path="res://Scenes/UI/PlayerOverlay/GameScreen.tscn" id="9_q6vyl"]
 
-[node name="TestSceneTileMap" type="Node2D"]
+[node name="TestSceneTileCropGrowth" type="Node2D"]
 y_sort_enabled = true
 
 [node name="DayNightCycleCanvasModulate" parent="." instance=ExtResource("1_aywkl")]
