@@ -571,9 +571,10 @@ script = ExtResource("10_nvgup")
 idle_state = NodePath("../idle")
 hit_component_collision_shape = NodePath("../../Hitable/HitComponentCollisionShape2D")
 
-[node name="watering" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state")]
+[node name="watering" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "hit_component_collision_shape")]
 script = ExtResource("11_3n58h")
 idle_state = NodePath("../idle")
+hit_component_collision_shape = NodePath("../../Hitable/HitComponentCollisionShape2D")
 
 [node name="mining" type="Node" parent="state_machine" node_paths=PackedStringArray("idle_state", "hit_component_collision_shape")]
 script = ExtResource("12_c6ryd")

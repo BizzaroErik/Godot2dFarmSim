@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bs4j5k4vfo6er" path="res://Scenes/Objects/Shaders/shake_shader.tres" id="1_ag6eb"]
 [ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="1_kroc2"]
-[ext_resource type="Script" path="res://Scripts/Environment/small_tree.gd" id="2_qmt10"]
+[ext_resource type="Script" path="res://Scripts/Objects/small_tree.gd" id="2_qmt10"]
 [ext_resource type="PackedScene" uid="uid://d0ag7r888va2q" path="res://Scenes/Components/Hurtable.tscn" id="3_q0iij"]
 [ext_resource type="PackedScene" uid="uid://4vqn5j58vh6a" path="res://Scenes/Components/Health.tscn" id="4_ig1hx"]
 

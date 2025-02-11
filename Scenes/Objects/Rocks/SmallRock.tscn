@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://bs4j5k4vfo6er" path="res://Scenes/Objects/Shaders/shake_shader.tres" id="1_emref"]
 [ext_resource type="Texture2D" uid="uid://dcg060b5t3mu" path="res://Assets/Objects/Mushrooms, Flowers, Stones.png" id="2_234lp"]
-[ext_resource type="Script" path="res://Scripts/Environment/small_rock.gd" id="3_6rtco"]
+[ext_resource type="Script" path="res://Scripts/Objects/small_rock.gd" id="3_6rtco"]
 [ext_resource type="PackedScene" uid="uid://d0ag7r888va2q" path="res://Scenes/Components/Hurtable.tscn" id="4_7f5mb"]
 [ext_resource type="PackedScene" uid="uid://4vqn5j58vh6a" path="res://Scenes/Components/Health.tscn" id="5_ui7bj"]
 

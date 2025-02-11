@@ -8,3 +8,12 @@ enum Tools {
 	PlantCrops,
 	MineRock
 }
+
+enum GrowthStates {
+	Seed,
+	Germination,
+	Vegetative,
+	Reproiduction,
+	Maturity,
+	Harvesting
+}

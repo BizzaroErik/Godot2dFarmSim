@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 ToolManager="*res://Scripts/Global/tool_manager.gd"
 InventoryManager="*res://Scripts/Global/inventory_manager.gd"
+DayNightManager="*res://Scripts/Global/day_night_manager.gd"
 
 [display]
 
