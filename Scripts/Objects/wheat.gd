@@ -1,5 +1,16 @@
 extends Node2D
 
+#ToDo: Grid layout for crop placement
+#ToDo: Implement finite state machine as well as customizable fields
+#ToDo: Y-Sort based on state
+#Fields: watered, 
+#States: Seed, Growing, Producing, Harvest
+#Flow: Corn: Seed -> Growing (2 days as small, 1 day as medium height, 3 days as tall) -> Producing (Every 3rd day)
+#Flow2: Melon: Seed -> Growing (...) -> Harvest (days until rotten, unwatered, etc)
+#Seed: Does nothing
+#Growing: Animation params for growth, time for each animation, total time until producing/havest, producing
+#Producing: Re-Producable crops like corn, tomatoes, grapes that produce a harvestable every x amount of days
+#Harvest: Single Producable crops like a melon,
 var wheat_harvest_scene = preload("res://Scenes/Objects/Collectables/Wheat.tscn")
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var watering_particles: GPUParticles2D = $WateringParticles
@@ -22,7 +33,6 @@ func _process(delta: float) -> void:
 	sprite_2d.frame = start_frame - 1 + growth_state
 	if growth_state == DataTypes.GrowthStates.Maturity:
 		flowering_particles.emitting = true
-
 	
 func on_hurt(hit_damage: int) -> void:
 	if !growth_cycle.is_watered:

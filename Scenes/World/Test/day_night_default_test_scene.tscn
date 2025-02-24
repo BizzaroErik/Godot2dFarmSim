@@ -2,7 +2,7 @@
 
 [ext_resource type="TileSet" uid="uid://dgauf5mernihn" path="res://Assets/Tilesets/Resources/game_tile_set.tres" id="1_0e1t1"]
 [ext_resource type="PackedScene" uid="uid://ce4lhr53ajk4w" path="res://Scenes/Components/Environment/DayNightCycleCanvasModulate.tscn" id="1_op645"]
-[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/player.tscn" id="2_mwr6w"]
+[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="2_mwr6w"]
 [ext_resource type="PackedScene" uid="uid://dqqunframbj4g" path="res://Scenes/Objects/Collectables/Egg.tscn" id="3_20x3a"]
 [ext_resource type="PackedScene" uid="uid://dcq5quisc12t" path="res://Scenes/Objects/Collectables/Milk.tscn" id="4_gcb1a"]
 [ext_resource type="PackedScene" uid="uid://c20n5srd421ab" path="res://Scenes/Objects/Collectables/Rock.tscn" id="5_aow1s"]
@@ -35,7 +35,6 @@ tile_set = ExtResource("1_0e1t1")
 
 [node name="Player" parent="." instance=ExtResource("2_mwr6w")]
 position = Vector2(363, 213)
-current_tool = 3
 
 [node name="Egg" parent="." instance=ExtResource("3_20x3a")]
 position = Vector2(327, 185)

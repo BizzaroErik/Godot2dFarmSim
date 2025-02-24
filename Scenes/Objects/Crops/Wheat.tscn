@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmkt7te3x6woa"]
+[gd_scene load_steps=10 format=3 uid="uid://bmkt7te3x6woa"]
 
 [ext_resource type="Texture2D" uid="uid://b3s57aiej2h8o" path="res://Assets/Objects/Farming Plants.png" id="1_at5u6"]
 [ext_resource type="Script" path="res://Scripts/Objects/wheat.gd" id="1_u4d2d"]
@@ -6,17 +6,22 @@
 [ext_resource type="PackedScene" uid="uid://d0ag7r888va2q" path="res://Scenes/Components/Hurtable.tscn" id="3_diy4c"]
 [ext_resource type="PackedScene" uid="uid://dmmwb0uydqd5f" path="res://Scenes/Components/Crops/flowering_particles.tscn" id="4_o4v3e"]
 [ext_resource type="PackedScene" uid="uid://btgg3mmejc52v" path="res://Scenes/Components/Crops/growth_cycle.tscn" id="5_1w5ey"]
+[ext_resource type="PackedScene" uid="uid://pkb52eaat6pj" path="res://Scenes/Components/SaveData.tscn" id="7_r1t8r"]
+[ext_resource type="Resource" uid="uid://cgg5gxrtcxl4b" path="res://Resources/scene_data_resource.tres" id="8_qih51"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c34xk"]
 size = Vector2(10, 6)
 
 [node name="Wheat" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_u4d2d")
 start_frame = 40
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, -3)
+y_sort_enabled = true
+position = Vector2(0, -11)
 texture = ExtResource("1_at5u6")
+offset = Vector2(0, 8)
 hframes = 5
 vframes = 15
 frame = 40
@@ -32,3 +37,6 @@ tool = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtable"]
 shape = SubResource("RectangleShape2D_c34xk")
+
+[node name="SaveData" parent="." instance=ExtResource("7_r1t8r")]
+save_data_resource = ExtResource("8_qih51")

@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ce4lhr53ajk4w" path="res://Scenes/Components/Environment/DayNightCycleCanvasModulate.tscn" id="1_aywkl"]
 [ext_resource type="TileSet" uid="uid://dgauf5mernihn" path="res://Assets/Tilesets/Resources/game_tile_set.tres" id="2_cic7u"]
-[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/player.tscn" id="3_a4gr1"]
+[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="3_a4gr1"]
 [ext_resource type="PackedScene" uid="uid://bmkt7te3x6woa" path="res://Scenes/Objects/Crops/Wheat.tscn" id="6_j0cg0"]
 [ext_resource type="PackedScene" uid="uid://bd4kqrsdotmek" path="res://Scenes/Objects/Collectables/Wheat.tscn" id="8_5rlg1"]
 [ext_resource type="PackedScene" uid="uid://ijdn4l214frw" path="res://Scenes/UI/PlayerOverlay/GameScreen.tscn" id="9_q6vyl"]
