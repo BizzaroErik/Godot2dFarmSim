@@ -11,13 +11,13 @@ func _ready() -> void:
 	level_scene_name = get_parent().name
 
 func save_node_data() -> void:
-	var nodes = get_tree().get_nodes_in_group("save_data_components")
+	var nodes = get_tree().get_nodes_in_group("save_data_component")
 	game_data_resource = SaveGameDataResource.new()
 	
 	if nodes != null:
 		for node: SaveData in nodes:
 			if node is SaveData:
-				var save_data_resource: NodeDataResource = node.save_data()
+				var save_data_resource: NodeDataResource = node._save_data()
 				var save_final_resource = save_data_resource.duplicate()
 				game_data_resource.save_data_nodes.append(save_final_resource)
 

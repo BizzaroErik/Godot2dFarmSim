@@ -6,16 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="4_d22ki"]
 [ext_resource type="PackedScene" uid="uid://b41sn808yke1u" path="res://Scenes/Components/field_cursor.tscn" id="4_vogg0"]
 [ext_resource type="PackedScene" uid="uid://cf3s8imr10k7" path="res://Scenes/Components/crop_cursor.tscn" id="5_3qnv7"]
-[ext_resource type="PackedScene" uid="uid://bmkt7te3x6woa" path="res://Scenes/Objects/Crops/Wheat.tscn" id="5_uk558"]
 [ext_resource type="PackedScene" uid="uid://ijdn4l214frw" path="res://Scenes/UI/PlayerOverlay/GameScreen.tscn" id="6_0r77o"]
+[ext_resource type="PackedScene" uid="uid://pkb52eaat6pj" path="res://Scenes/Components/SaveData.tscn" id="6_gw3ey"]
+[ext_resource type="Resource" uid="uid://dvh11ftxmi1s0" path="res://Resources/tilemap_layer_data_resource.tres" id="7_74pdo"]
 [ext_resource type="PackedScene" uid="uid://bpgmudrkl1nit" path="res://Scenes/Components/save_level_data.tscn" id="8_ioh0s"]
-[ext_resource type="Script" path="res://Scripts/Components/save_level_data.gd" id="9_k3u0r"]
 
 [node name="TestSceneTileCropGrowth" type="Node2D"]
 y_sort_enabled = true
 
 [node name="SaveLevelData" parent="." instance=ExtResource("8_ioh0s")]
-script = ExtResource("9_k3u0r")
 
 [node name="TestSceneSaveDataManagerComponent" parent="." instance=ExtResource("3_p4eu6")]
 
@@ -36,15 +35,15 @@ tile_set = ExtResource("2_becmw")
 [node name="Dirt" type="TileMapLayer" parent="GameTileMap"]
 tile_set = ExtResource("2_becmw")
 
+[node name="SaveData" parent="GameTileMap/Dirt" instance=ExtResource("6_gw3ey")]
+save_data_resource = ExtResource("7_74pdo")
+
 [node name="Trees" type="TileMapLayer" parent="GameTileMap"]
 tile_map_data = PackedByteArray("AAAIAAUACAAJAAMAAAAMAAQACAAAAAAAAAALAAcACAAAAAAAAAAHAAgACAAAAAAAAAAFAAUACAAAAAAAAAARAAcACAADAAAAAAA=")
 tile_set = ExtResource("2_becmw")
 
 [node name="Crops" type="Node2D" parent="."]
 y_sort_enabled = true
-
-[node name="Wheat2" parent="Crops" instance=ExtResource("5_uk558")]
-position = Vector2(311, 255)
 
 [node name="FieldCursor" parent="." node_paths=PackedStringArray("grass_tilemap_layer", "tilled_soil_tilemap_layer") instance=ExtResource("4_vogg0")]
 grass_tilemap_layer = NodePath("../GameTileMap/Grass")

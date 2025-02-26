@@ -6,7 +6,7 @@ extends Node
 @export var save_data_resource: Resource
 
 func _ready() -> void:
-	add_to_group("save_data")
+	add_to_group("save_data_component")
 
 func _save_data() -> Resource:
 	if parent_node == null:
