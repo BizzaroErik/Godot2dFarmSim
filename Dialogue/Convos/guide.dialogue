@@ -1,0 +1,6 @@
+~ start
+Stephanie: [[Hi|Hello|Howdy]], nice to meet you.
+Stephanie: Welcome to your new farm.
+Stephanie: Here are some seeds to grow some crops.
+do GameDialogueManager.action_give_crop_seeds()
+=> END

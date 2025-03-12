@@ -21,6 +21,8 @@ ToolManager="*res://Scripts/Global/tool_manager.gd"
 InventoryManager="*res://Scripts/Global/inventory_manager.gd"
 DayNightManager="*res://Scripts/Global/day_night_manager.gd"
 SaveGameManager="*res://Scripts/Global/save_game_manager.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameDialogueManager="*res://Scripts/Global/game_dialogue_manager.gd"
 
 [display]
 
@@ -31,10 +33,15 @@ window/size/window_height_override=1440
 window/stretch/mode="canvas_items"
 window/stretch/scale_mode="integer"
 
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
+
 [file_customization]
 
 folder_colors={
 "res://Assets/": "yellow",
+"res://Dialogue/": "orange",
 "res://Resources/": "purple",
 "res://Scenes/": "teal",
 "res://Scripts/": "blue"
@@ -87,6 +94,15 @@ save={
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":80,"key_label":0,"unicode":112,"location":0,"echo":false,"script":null)
 ]
 }
+show_dialogue={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":69,"key_label":0,"unicode":101,"location":0,"echo":false,"script":null)
+]
+}
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Dialogue/Convos/guide.dialogue")
 
 [layer_names]
 

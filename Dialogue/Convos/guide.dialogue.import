@@ -1,0 +1,15 @@
+[remap]
+
+importer="dialogue_manager_compiler_13"
+type="Resource"
+uid="uid://b77e7d8ol5wgw"
+path="res://.godot/imported/guide.dialogue-53f41f9cb60a4ebc46a94745b8d2c701.tres"
+
+[deps]
+
+source_file="res://Dialogue/Convos/guide.dialogue"
+dest_files=["res://.godot/imported/guide.dialogue-53f41f9cb60a4ebc46a94745b8d2c701.tres"]
+
+[params]
+
+defaults=true
