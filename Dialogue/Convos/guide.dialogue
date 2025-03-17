@@ -2,5 +2,9 @@
 Stephanie: [[Hi|Hello|Howdy]], nice to meet you.
 Stephanie: Welcome to your new farm.
 Stephanie: Here are some seeds to grow some crops.
-do GameDialogueManager.action_give_crop_seeds()
+- Take crop seeds
+	Erik: Yeah I can grow crops.
+	do GameDialogueManager.action_give_crop_seeds()
+- No I don't want them
+	Erik: I'm not ready to grow my farm yet.
 => END
