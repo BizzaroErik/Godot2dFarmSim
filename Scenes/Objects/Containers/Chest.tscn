@@ -1,3 +1,110 @@
-[gd_scene format=3 uid="uid://b0fx4akprebp"]
+[gd_scene load_steps=16 format=3 uid="uid://b0fx4akprebp"]
+
+[ext_resource type="Texture2D" uid="uid://boe0j6h2u2j5l" path="res://Assets/Tilesets/Building parts/Chest.png" id="1_h3621"]
+[ext_resource type="PackedScene" uid="uid://bn62xvntc5f4v" path="res://Scenes/Components/Interactable.tscn" id="2_qhabq"]
+[ext_resource type="PackedScene" uid="uid://sharkmgokcah" path="res://Scenes/UI/Interactable/InteractableLabel.tscn" id="3_vq56a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0b8sp"]
+atlas = ExtResource("1_h3621")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bmbq"]
+atlas = ExtResource("1_h3621")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsgi5"]
+atlas = ExtResource("1_h3621")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xh01r"]
+atlas = ExtResource("1_h3621")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_21ljm"]
+atlas = ExtResource("1_h3621")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kmcr3"]
+atlas = ExtResource("1_h3621")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7oqlr"]
+atlas = ExtResource("1_h3621")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqqqf"]
+atlas = ExtResource("1_h3621")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3flau"]
+atlas = ExtResource("1_h3621")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taoyn"]
+atlas = ExtResource("1_h3621")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_na1a6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0b8sp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bmbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsgi5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xh01r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_21ljm")
+}],
+"loop": false,
+"name": &"chest_closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kmcr3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7oqlr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqqqf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3flau")
+}],
+"loop": false,
+"name": &"chest_open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taoyn")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_deurs"]
+radius = 16.0312
 
 [node name="Chest" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_na1a6")
+animation = &"chest_closed"
+autoplay = "default"
+
+[node name="Interactable" parent="." instance=ExtResource("2_qhabq")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_deurs")
+
+[node name="InteractableLabel" parent="." instance=ExtResource("3_vq56a")]
