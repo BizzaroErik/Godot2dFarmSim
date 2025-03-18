@@ -1,7 +1,12 @@
-[gd_scene load_steps=3 format=4 uid="uid://bk5b3vbfc76rj"]
+[gd_scene load_steps=8 format=4 uid="uid://bk5b3vbfc76rj"]
 
 [ext_resource type="TileSet" uid="uid://dgauf5mernihn" path="res://Assets/Tilesets/Resources/game_tile_set.tres" id="1_lm4bs"]
-[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="2_jb53f"]
+[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/player.tscn" id="2_jb53f"]
+[ext_resource type="PackedScene" uid="uid://dqqunframbj4g" path="res://Scenes/Objects/Collectables/Egg.tscn" id="3_2i30r"]
+[ext_resource type="PackedScene" uid="uid://nom8am8isvcv" path="res://Scenes/Objects/Collectables/Log.tscn" id="4_rv13c"]
+[ext_resource type="PackedScene" uid="uid://dcq5quisc12t" path="res://Scenes/Objects/Collectables/Milk.tscn" id="5_psar6"]
+[ext_resource type="PackedScene" uid="uid://c20n5srd421ab" path="res://Scenes/Objects/Collectables/Rock.tscn" id="6_1b3ag"]
+[ext_resource type="PackedScene" uid="uid://bd4kqrsdotmek" path="res://Scenes/Objects/Collectables/Wheat.tscn" id="7_s2f3s"]
 
 [node name="TestSceneTileMap" type="Node2D"]
 
@@ -25,4 +30,18 @@ tile_set = ExtResource("1_lm4bs")
 
 [node name="Player" parent="." instance=ExtResource("2_jb53f")]
 position = Vector2(363, 213)
-current_tool = 3
+
+[node name="Egg" parent="." instance=ExtResource("3_2i30r")]
+position = Vector2(300, 171)
+
+[node name="Log" parent="." instance=ExtResource("4_rv13c")]
+position = Vector2(342, 175)
+
+[node name="Milk" parent="." instance=ExtResource("5_psar6")]
+position = Vector2(257, 169)
+
+[node name="Rock" parent="." instance=ExtResource("6_1b3ag")]
+position = Vector2(281, 201)
+
+[node name="Wheat" parent="." instance=ExtResource("7_s2f3s")]
+position = Vector2(327, 199)

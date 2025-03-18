@@ -1,8 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://b0fx4akprebp"]
+[gd_scene load_steps=20 format=3 uid="uid://b0fx4akprebp"]
 
 [ext_resource type="Texture2D" uid="uid://boe0j6h2u2j5l" path="res://Assets/Tilesets/Building parts/Chest.png" id="1_h3621"]
+[ext_resource type="Script" path="res://Scripts/Objects/chest.gd" id="1_xdo4w"]
 [ext_resource type="PackedScene" uid="uid://bn62xvntc5f4v" path="res://Scenes/Components/Interactable.tscn" id="2_qhabq"]
 [ext_resource type="PackedScene" uid="uid://sharkmgokcah" path="res://Scenes/UI/Interactable/InteractableLabel.tscn" id="3_vq56a"]
+[ext_resource type="PackedScene" uid="uid://bi1mrstx2c3eb" path="res://Scenes/Components/feed_component.tscn" id="5_uy1fn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0b8sp"]
 atlas = ExtResource("1_h3621")
@@ -92,15 +94,56 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="GDScript" id="GDScript_1ge64"]
+script/source = "extends Node2D
+
+var balloon_scene = preload(\"res://Dialogue/game_dialogue_balloon.tscn\")
+
+var wheat_harvest_scene = preload(\"res://Scenes/Objects/Collectables/Wheat.tscn\")
+
+@export var dialoge_start_command: String
+@export var food_drop_height: int = 40
+@export var reward_output_radius: int = 20
+@export var output_reward_scenes: Array[PackedScene] = []
+
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var feed_component: FeedComponent = $FeedComponent
+@onready var reward_marker: Marker2D = $RewardMarker
+
+var in_range: bool
+var is_chest_open: bool
+
+func _ready() -> void:
+	#interactable.interactable_activated.connect(on_interactable_activated)
+	#interactable.interactable_deactivated.connect(on_interactable_deactivated)
+	#interactable.hide()
+	pass
+
+func on_interactable_activated() -> void:
+	#interactable.show()
+	#in_range = true
+	pass
+
+func on_interactable_deactivated() -> void:
+	#interactable.hide()
+	#in_range = false
+	pass
+"
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_deurs"]
-radius = 16.0312
+radius = 23.0217
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5iw86"]
 
 [node name="Chest" type="Node2D"]
+y_sort_enabled = true
+script = ExtResource("1_xdo4w")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_na1a6")
 animation = &"chest_closed"
 autoplay = "default"
+script = SubResource("GDScript_1ge64")
 
 [node name="Interactable" parent="." instance=ExtResource("2_qhabq")]
 
@@ -108,3 +151,16 @@ autoplay = "default"
 shape = SubResource("CircleShape2D_deurs")
 
 [node name="InteractableLabel" parent="." instance=ExtResource("3_vq56a")]
+offset_left = -25.0
+offset_top = -33.0
+offset_right = -7.0
+offset_bottom = -15.0
+
+[node name="RewardMarker" type="Marker2D" parent="."]
+position = Vector2(16, 16)
+
+[node name="FeedComponent" parent="." instance=ExtResource("5_uy1fn")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
+shape = SubResource("CircleShape2D_5iw86")
+debug_color = Color(0.753148, 0.438919, 0.356634, 0.42)
