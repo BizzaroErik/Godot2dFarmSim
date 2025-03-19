@@ -22,9 +22,6 @@ func on_interactable_deactivated() -> void:
 	interactable_label.hide()
 	in_range = false
 
-func _process(delta: float) -> void:
-	pass
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("show_dialogue") and in_range:
 		var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()

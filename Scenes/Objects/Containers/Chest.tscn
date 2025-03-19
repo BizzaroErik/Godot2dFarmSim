@@ -151,10 +151,10 @@ script = SubResource("GDScript_1ge64")
 shape = SubResource("CircleShape2D_deurs")
 
 [node name="InteractableLabel" parent="." instance=ExtResource("3_vq56a")]
-offset_left = -25.0
-offset_top = -33.0
-offset_right = -7.0
-offset_bottom = -15.0
+offset_left = -21.0
+offset_top = -27.0
+offset_right = -3.0
+offset_bottom = -9.0
 
 [node name="RewardMarker" type="Marker2D" parent="."]
 position = Vector2(16, 16)
