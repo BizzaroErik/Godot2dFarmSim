@@ -16,6 +16,7 @@ y_sort_enabled = true
 texture = SubResource("AtlasTexture_3dl5f")
 
 [node name="Collectable" parent="." instance=ExtResource("2_mfhhf")]
+collision_layer = 160
 collectable_name = "wheat"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collectable"]

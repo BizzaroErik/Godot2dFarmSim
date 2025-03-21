@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b0fx4akprebp"]
+[gd_scene load_steps=21 format=3 uid="uid://b0fx4akprebp"]
 
 [ext_resource type="Texture2D" uid="uid://boe0j6h2u2j5l" path="res://Assets/Tilesets/Building parts/Chest.png" id="1_h3621"]
 [ext_resource type="Script" path="res://Scripts/Objects/chest.gd" id="1_xdo4w"]
@@ -135,7 +135,10 @@ radius = 23.0217
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5iw86"]
 
-[node name="Chest" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7paga"]
+size = Vector2(17, 12)
+
+[node name="Chest" type="StaticBody2D"]
 y_sort_enabled = true
 script = ExtResource("1_xdo4w")
 
@@ -164,3 +167,7 @@ position = Vector2(16, 16)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="FeedComponent"]
 shape = SubResource("CircleShape2D_5iw86")
 debug_color = Color(0.753148, 0.438919, 0.356634, 0.42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2)
+shape = SubResource("RectangleShape2D_7paga")
