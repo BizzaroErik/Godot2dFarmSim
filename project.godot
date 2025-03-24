@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="FarmSim"
-run/main_scene="res://Scenes/World/Test/test_scene_tile_map.tscn"
+run/main_scene="res://Scenes/World/Main/MainSceneHomeStart.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

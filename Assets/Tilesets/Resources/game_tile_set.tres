@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=24 format=3 uid="uid://dgauf5mernihn"]
+[gd_resource type="TileSet" load_steps=26 format=3 uid="uid://dgauf5mernihn"]
 
 [ext_resource type="Texture2D" uid="uid://bmv2o8cgnn7qn" path="res://Assets/Tilesets/ground tiles/water frames/Water.png" id="1_8ja7e"]
 [ext_resource type="PackedScene" uid="uid://nu1fltqgyn8f" path="res://Scenes/Buildings/SmallHouse.tscn" id="1_fh8wf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://dnalb3r250gjd" path="res://Scenes/Objects/Trees/MediumTree.tscn" id="3_qftfc"]
 [ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="4_jpeat"]
 [ext_resource type="PackedScene" uid="uid://du0pmvc61q0ow" path="res://Scenes/Objects/Rocks/SmallRock.tscn" id="5_busls"]
+[ext_resource type="Texture2D" uid="uid://b3jmrm1lk0w62" path="res://Assets/Objects/Water Objects.png" id="6_tjcgc"]
 [ext_resource type="Texture2D" uid="uid://dcg060b5t3mu" path="res://Assets/Objects/Mushrooms, Flowers, Stones.png" id="6_y7r7a"]
 [ext_resource type="PackedScene" uid="uid://btgpqqnvbh2us" path="res://Scenes/Characters/Animals/Chicken.tscn" id="7_hkvh6"]
 [ext_resource type="Texture2D" uid="uid://c3sjtae1qw1km" path="res://Assets/Tilesets/ground tiles/Old tiles/Tilled_Dirt_Wide_v2.png" id="10_2n47o"]
@@ -24,6 +25,27 @@ resource_name = "Collectables"
 scenes/1/scene = ExtResource("3_qftfc")
 scenes/2/scene = ExtResource("3_8uumg")
 scenes/3/scene = ExtResource("5_busls")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d3hva"]
+texture = ExtResource("6_tjcgc")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+6:0/0 = 0
+7:0/0 = 0
+8:0/0 = 0
+9:0/0 = 0
+10:0/0 = 0
+11:0/0 = 0
+4:0/size_in_atlas = Vector2i(2, 1)
+4:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yebrc"]
 texture = ExtResource("6_y7r7a")
@@ -910,3 +932,4 @@ sources/2 = SubResource("TileSetAtlasSource_yebrc")
 sources/3 = SubResource("TileSetScenesCollectionSource_6ebct")
 sources/9 = SubResource("TileSetAtlasSource_0xo16")
 sources/6 = SubResource("TileSetAtlasSource_q2foy")
+sources/10 = SubResource("TileSetAtlasSource_d3hva")

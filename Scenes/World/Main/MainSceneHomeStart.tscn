@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://86bu3y77xwp6"]
+
+[ext_resource type="PackedScene" uid="uid://ce4lhr53ajk4w" path="res://Scenes/Components/Environment/DayNightCycleCanvasModulate.tscn" id="1_4gvwn"]
+[ext_resource type="PackedScene" uid="uid://cyr40ahrfjuvw" path="res://Scenes/World/Main/HomeStart/HomeStart.tscn" id="2_0t5lt"]
+[ext_resource type="PackedScene" uid="uid://ijdn4l214frw" path="res://Scenes/UI/PlayerOverlay/GameScreen.tscn" id="2_h2b07"]
+[ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="3_825tp"]
+
+[node name="MainScene" type="Node2D"]
+y_sort_enabled = true
+
+[node name="DayNightCycleCanvasModulate" parent="." instance=ExtResource("1_4gvwn")]
+visible = false
+
+[node name="LevelRoot" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="HomeStart" parent="LevelRoot" instance=ExtResource("2_0t5lt")]
+
+[node name="Player" parent="." instance=ExtResource("3_825tp")]
+position = Vector2(269, 180)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+zoom = Vector2(2, 2)
+
+[node name="GameScreen" parent="." instance=ExtResource("2_h2b07")]
