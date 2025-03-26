@@ -31,7 +31,7 @@ func process_physics(delta: float) -> State:
 	return null
 
 func set_animation() -> void:
-	sprite.play("idle_front")
+	sprite.play("idle")
 
 func on_idle_state_timeout() -> void:
 	idle_state_timeout = true

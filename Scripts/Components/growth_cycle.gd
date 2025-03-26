@@ -24,7 +24,7 @@ func on_time_tick_day(day: int) -> void:
 		harvest_state(starting_day, day)
 	#is_watered = false
 
-func growth_states(starting_day: int, current_day: int) -> void:
+func growth_states(growth_starting_day: int, current_day: int) -> void:
 	#Check if crop has reached maturity and return as nothing to adjust
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		return
@@ -33,7 +33,7 @@ func growth_states(starting_day: int, current_day: int) -> void:
 	
 	#ToDo: Check double modelo call
 	#Find the current index of state to match with the animation index
-	var growth_days_passed = (current_day - starting_day) % num_states
+	var growth_days_passed = (current_day - growth_starting_day) % num_states
 	var state_index = growth_days_passed % num_states + 1
 	current_growth_state = state_index
 	#ToDo: Adjust growth pattern on a per crop basis
@@ -43,11 +43,11 @@ func growth_states(starting_day: int, current_day: int) -> void:
 		crop_maturity.emit()
 
 
-func harvest_state(starting_day: int, current_day: int) -> void:
+func harvest_state(harvest_starting_day: int, current_day: int) -> void:
 	if current_growth_state == DataTypes.GrowthStates.Harvesting:
 		return
 	
-	var days_passed = (current_day - starting_day) % days_until_harvest
+	var days_passed = (current_day - harvest_starting_day) % days_until_harvest
 	
 	if days_passed == days_until_harvest - 1:
 		current_growth_state = DataTypes.GrowthStates.Harvesting
