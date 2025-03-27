@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" path="res://Scripts/Components/crop_cursor.gd" id="1_bavln"]
 
-[node name="CropCursor" type="Node"]
+[node name="CropCursor" type="Node2D"]
 script = ExtResource("1_bavln")

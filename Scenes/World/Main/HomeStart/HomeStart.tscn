@@ -46,6 +46,7 @@ tile_map_data = PackedByteArray("AAAxAAcABwACAAIAAAAwAAcABwABAAIAAAAvAAcABwABAAI
 tile_set = ExtResource("1_oqpcr")
 
 [node name="TilledDirt" type="TileMapLayer" parent="GameTileMap"]
+z_index = -1
 tile_map_data = PackedByteArray("AAAPAAkABgADAAAAAAAPAAoABgADAAEAAAAPAAsABgADAAIAAAA=")
 tile_set = ExtResource("1_oqpcr")
 
@@ -84,6 +85,8 @@ tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledDirt")
 
 [node name="CropCursor" parent="." node_paths=PackedStringArray("tilled_soil_tilemap_layer") instance=ExtResource("8_acyq7")]
 tilled_soil_tilemap_layer = NodePath("../GameTileMap/TilledDirt")
+
+[node name="Crops" type="Node2D" parent="."]
 
 [node name="CowNavigation" type="NavigationRegion2D" parent="."]
 y_sort_enabled = true

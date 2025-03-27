@@ -21,7 +21,6 @@ func _unhandled_input(event: InputEvent) -> void:
 			get_cell_under_mouse()
 			remove_tilled_soil_cell()
 	elif event.is_action_pressed("action"):
-		print("tried to till")
 		if ToolManager.selected_tool == DataTypes.Tools.TillGround:
 			print("proper tool selected")
 			get_cell_under_mouse()
