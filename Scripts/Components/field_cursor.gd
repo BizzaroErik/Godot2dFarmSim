@@ -32,15 +32,13 @@ func get_cell_under_mouse() -> void:
 	cell_position = grass_tilemap_layer.local_to_map(mouse_position)
 	cell_source_id = grass_tilemap_layer.get_cell_source_id(cell_position)
 	local_cell_position = grass_tilemap_layer.map_to_local(cell_position)
-	distance = player.global_position.distance_to(local_cell_position)
+	distance = player.global_position.distance_to(get_global_mouse_position())
 	
-	print("mouse position: ", mouse_position, " cell position: ", cell_position, " cell source id: ", cell_source_id)
-	print("distance: ", distance)
+	#print("mouse position: ", mouse_position, " cell position: ", cell_position, " cell source id: ", cell_source_id)
+	#print("distance: ", distance)
 
 func add_tilled_soil_cell() -> void:
-	print("attempting to add tilled soil")
 	if distance < 20.0 && cell_source_id != -1:
-		print("did we get this far?")
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], terrain_set, terrain, true)
 
 func remove_tilled_soil_cell() -> void:

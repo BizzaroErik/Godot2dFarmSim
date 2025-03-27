@@ -46,7 +46,7 @@ tile_map_data = PackedByteArray("AAAxAAcABwACAAIAAAAwAAcABwABAAIAAAAvAAcABwABAAI
 tile_set = ExtResource("1_oqpcr")
 
 [node name="TilledDirt" type="TileMapLayer" parent="GameTileMap"]
-z_index = -1
+tile_map_data = PackedByteArray("AAAPAAkABgADAAAAAAAPAAoABgADAAEAAAAPAAsABgADAAIAAAA=")
 tile_set = ExtResource("1_oqpcr")
 
 [node name="Undergrowth" type="TileMapLayer" parent="GameTileMap"]
