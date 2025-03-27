@@ -9,7 +9,6 @@
 [node name="MainScene" type="Node"]
 
 [node name="DayNightCycleCanvasModulate" parent="." instance=ExtResource("1_4gvwn")]
-visible = false
 
 [node name="GameScreen" parent="." instance=ExtResource("2_h2b07")]
 

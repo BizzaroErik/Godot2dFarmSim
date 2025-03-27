@@ -1,0 +1,53 @@
+[gd_scene load_steps=3 format=3 uid="uid://bxnku28ninhbg"]
+
+[ext_resource type="Theme" uid="uid://d0u1btg7fmnt2" path="res://Scenes/UI/game_ui_theme.tres" id="1_chjf0"]
+[ext_resource type="PackedScene" uid="uid://cygs1y7pcshff" path="res://Scenes/UI/game_menu_screen_background.tscn" id="2_pt4nv"]
+
+[node name="GameMenuScreen" type="CanvasLayer"]
+
+[node name="GameMenuScreenBackground" parent="." instance=ExtResource("2_pt4nv")]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_chjf0")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="MarginContainer/MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.606673, 0.309, 0.0679103, 1)
+theme_override_colors/font_shadow_color = Color(0.89059, 0.89059, 0.89059, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = -2
+theme_override_font_sizes/font_size = 54
+text = "Another Croppy Day"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+
+[node name="StartGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Start"
+
+[node name="SaveGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Save"
+
+[node name="ExitGameButton" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 29)
+layout_mode = 2
+theme_type_variation = &"GameMenuButton"
+text = "Exit"
