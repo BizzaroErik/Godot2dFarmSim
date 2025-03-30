@@ -1,9 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://cyr40ahrfjuvw"]
+[gd_scene load_steps=15 format=4 uid="uid://cyr40ahrfjuvw"]
 
 [ext_resource type="TileSet" uid="uid://dgauf5mernihn" path="res://Assets/Tilesets/Resources/game_tile_set.tres" id="1_oqpcr"]
+[ext_resource type="Script" path="res://Scripts/Components/save_level_data.gd" id="1_x3kns"]
 [ext_resource type="PackedScene" uid="uid://nu1fltqgyn8f" path="res://Scenes/Buildings/SmallHouse.tscn" id="2_mbq04"]
 [ext_resource type="PackedScene" uid="uid://w6tln1ybx3uc" path="res://Scenes/Buildings/LargeHouse.tscn" id="3_4xg1b"]
+[ext_resource type="Script" path="res://Scripts/Components/save_data.gd" id="3_mln5d"]
 [ext_resource type="PackedScene" uid="uid://b0fx4akprebp" path="res://Scenes/Objects/Containers/Chest.tscn" id="4_8y0dy"]
+[ext_resource type="Resource" uid="uid://dvh11ftxmi1s0" path="res://Resources/tilemap_layer_data_resource.tres" id="4_unep0"]
 [ext_resource type="PackedScene" uid="uid://cwit4fv8c2r7j" path="res://Scenes/Characters/Animals/Cow.tscn" id="5_7qak3"]
 [ext_resource type="PackedScene" uid="uid://btgpqqnvbh2us" path="res://Scenes/Characters/Animals/Chicken.tscn" id="6_mh5ey"]
 [ext_resource type="PackedScene" uid="uid://davaxbmlwwsxm" path="res://Scenes/Characters/NPCs/Guide.tscn" id="7_i7yrg"]
@@ -24,6 +27,9 @@ source_geometry_mode = 2
 
 [node name="HomeStart" type="Node2D"]
 y_sort_enabled = true
+
+[node name="SaveLevelDataComponent" type="Node" parent="."]
+script = ExtResource("1_x3kns")
 
 [node name="GameTileMap" type="Node2D" parent="."]
 y_sort_enabled = true
@@ -49,6 +55,10 @@ tile_set = ExtResource("1_oqpcr")
 z_index = -1
 tile_map_data = PackedByteArray("AAAPAAkABgADAAAAAAAPAAoABgADAAEAAAAPAAsABgADAAIAAAA=")
 tile_set = ExtResource("1_oqpcr")
+
+[node name="SaveData" type="Node" parent="GameTileMap/TilledDirt"]
+script = ExtResource("3_mln5d")
+save_data_resource = ExtResource("4_unep0")
 
 [node name="Undergrowth" type="TileMapLayer" parent="GameTileMap"]
 y_sort_enabled = true

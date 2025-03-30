@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://86bu3y77xwp6"]
+[gd_scene load_steps=8 format=3 uid="uid://86bu3y77xwp6"]
 
 [ext_resource type="PackedScene" uid="uid://ce4lhr53ajk4w" path="res://Scenes/Components/Environment/DayNightCycleCanvasModulate.tscn" id="1_4gvwn"]
 [ext_resource type="PackedScene" uid="uid://cyr40ahrfjuvw" path="res://Scenes/World/Main/HomeStart/HomeStart.tscn" id="2_0t5lt"]
 [ext_resource type="PackedScene" uid="uid://ijdn4l214frw" path="res://Scenes/UI/PlayerOverlay/GameScreen.tscn" id="2_h2b07"]
 [ext_resource type="PackedScene" uid="uid://dcphh72qtselo" path="res://Scenes/Characters/Player/Player.tscn" id="3_825tp"]
+[ext_resource type="PackedScene" uid="uid://bvpsnm4iwo32y" path="res://Scenes/Components/MouseCursorComponent.tscn" id="3_kne5t"]
+[ext_resource type="Texture2D" uid="uid://dx5lrsq2wojvt" path="res://Assets/UI/mouse_icon.png" id="4_ilw6d"]
 [ext_resource type="PackedScene" uid="uid://cw01nx0pfhixu" path="res://Scenes/Components/TestSceneEnableToolButtonsComponent.tscn" id="5_5p38h"]
 
 [node name="MainScene" type="Node"]
@@ -11,6 +13,9 @@
 [node name="DayNightCycleCanvasModulate" parent="." instance=ExtResource("1_4gvwn")]
 
 [node name="GameScreen" parent="." instance=ExtResource("2_h2b07")]
+
+[node name="MouseCursorComponent" parent="." instance=ExtResource("3_kne5t")]
+cursor_component_texture = ExtResource("4_ilw6d")
 
 [node name="GameRoot" type="Node2D" parent="."]
 y_sort_enabled = true

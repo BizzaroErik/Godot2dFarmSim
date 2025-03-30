@@ -14,7 +14,7 @@ var current_day: int
 
 func _ready() -> void:
 	DayNightManager.time_tick_day.connect(on_time_tick_day)
-	print(get_current_growth_state())
+	#print(get_current_growth_state())
 
 func on_time_tick_day(day: int) -> void:
 	if starting_day == 0:
@@ -38,7 +38,7 @@ func growth_states(growth_starting_day: int, current_day: int) -> void:
 	current_growth_state = state_index
 	#ToDo: Adjust growth pattern on a per crop basis
 	var name = DataTypes.GrowthStates.keys()[current_growth_state]
-	print("Current growth state: ", name, "State Index: ", state_index)
+	#print("Current growth state: ", name, "State Index: ", state_index)
 	if current_growth_state == DataTypes.GrowthStates.Maturity:
 		crop_maturity.emit()
 

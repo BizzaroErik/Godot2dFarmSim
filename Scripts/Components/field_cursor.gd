@@ -6,8 +6,7 @@ extends Node2D
 @export var terrain_set: int = 0
 @export var terrain: int = 3
 
-@onready var player: Player = get_tree().get_first_node_in_group("player")
-
+var player
 var mouse_position: Vector2
 var cell_position: Vector2i
 var cell_source_id: int
@@ -42,11 +41,7 @@ func add_tilled_soil_cell() -> void:
 func remove_tilled_soil_cell() -> void:
 	if distance < 20.0 && cell_source_id != -1:
 		tilled_soil_tilemap_layer.set_cells_terrain_connect([cell_position], 0, -1, true)
-# Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	await get_tree().process_frame
+	player = get_tree().get_first_node_in_group("player")

@@ -3,7 +3,7 @@ extends Node2D
 
 @export var tilled_soil_tilemap_layer: TileMapLayer
 
-@onready var player: Player = get_tree().get_first_node_in_group("player")
+var player
 
 var wheat_plant_scene = preload("res://Scenes/Objects/Crops/Wheat.tscn")
 
@@ -46,3 +46,6 @@ func remove_plant() -> void:
 		for node: Node2D in crops:
 			if node.global_position == local_cell_position:
 				node.queue_free()
+
+func _ready() -> void:
+	player = get_tree().get_first_node_in_group("player")

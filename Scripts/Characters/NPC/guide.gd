@@ -25,7 +25,7 @@ func on_interactable_deactivated() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("show_dialogue") and in_range:
 		var balloon: BaseGameDialogueBalloon = balloon_scene.instantiate()
-		get_tree().current_scene.add_child(balloon)
+		get_tree().root.add_child(balloon)
 		balloon.start(load("res://Dialogue/Convos/guide.dialogue"), "start")
 	
 func on_give_crop_seeds() -> void:
