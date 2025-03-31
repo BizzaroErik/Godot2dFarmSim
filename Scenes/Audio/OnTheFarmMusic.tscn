@@ -1,8 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://576yxgx2hxfh"]
 
-[ext_resource type="AudioStream" uid="uid://dygsn02ws2kgr" path="res://Assets/Audio/Positive Orchestral Theme #2.wav" id="1_85qi1"]
+[ext_resource type="AudioStream" uid="uid://b1wecpjp2w0sm" path="res://Assets/Audio/Positive Orchestral Theme #4.wav" id="1_c3fta"]
 
 [node name="OnTheFarmMusic" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_85qi1")
+stream = ExtResource("1_c3fta")
+volume_db = 10.0
 autoplay = true
+attenuation = 1e-05
 bus = &"Music"

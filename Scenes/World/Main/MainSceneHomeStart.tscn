@@ -24,7 +24,6 @@ y_sort_enabled = true
 position = Vector2(1585, 797)
 
 [node name="Camera2D" type="Camera2D" parent="GameRoot/Player"]
-zoom = Vector2(2, 2)
 
 [node name="LevelRoot" type="Node2D" parent="GameRoot"]
 y_sort_enabled = true

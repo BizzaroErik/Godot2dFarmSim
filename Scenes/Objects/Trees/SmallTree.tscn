@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://ceycb8f032iut"]
+[gd_scene load_steps=10 format=3 uid="uid://ceycb8f032iut"]
 
 [ext_resource type="Material" uid="uid://bs4j5k4vfo6er" path="res://Scenes/Objects/Shaders/shake_shader.tres" id="1_myjcp"]
 [ext_resource type="Texture2D" uid="uid://du6vggj8j53kc" path="res://Assets/Objects/Trees, stumps and bushes.png" id="1_si8cx"]
 [ext_resource type="PackedScene" uid="uid://d0ag7r888va2q" path="res://Scenes/Components/Hurtable.tscn" id="2_78xtv"]
 [ext_resource type="Script" path="res://Scripts/Objects/small_tree.gd" id="2_lsynt"]
 [ext_resource type="PackedScene" uid="uid://4vqn5j58vh6a" path="res://Scenes/Components/Health.tscn" id="3_p5vp1"]
+[ext_resource type="PackedScene" uid="uid://cw65ee48bidu7" path="res://Scenes/Audio/TreeHitSFX.tscn" id="6_nf1ue"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4ry45"]
 atlas = ExtResource("1_si8cx")
@@ -39,3 +40,5 @@ debug_color = Color(0.801293, 0.387418, 0.435635, 0.42)
 [node name="Health" parent="." instance=ExtResource("3_p5vp1")]
 start_health = 2
 current_health = 2
+
+[node name="TreeHitSfx" parent="." instance=ExtResource("6_nf1ue")]

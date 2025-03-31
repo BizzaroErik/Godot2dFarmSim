@@ -15,4 +15,5 @@ stream_3/stream = ExtResource("4_u38n0")
 [node name="SandSteps" type="AudioStreamPlayer2D"]
 stream = SubResource("AudioStreamRandomizer_na8a8")
 autoplay = true
+attenuation = 1e-05
 bus = &"SFX"

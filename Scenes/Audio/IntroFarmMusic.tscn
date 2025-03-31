@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp4vwkff72eax"]
+
+[ext_resource type="AudioStream" uid="uid://dygsn02ws2kgr" path="res://Assets/Audio/Positive Orchestral Theme #2.wav" id="1_ndjtv"]
+
+[node name="IntroFarmMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_ndjtv")
+autoplay = true
+attenuation = 1e-05
+bus = &"Music"
