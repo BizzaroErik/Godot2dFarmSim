@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw65ee48bidu7"]
+
+[ext_resource type="AudioStream" uid="uid://pygrcihdmew8" path="res://Assets/Audio/Impact 2.mp3" id="1_d50k7"]
+
+[node name="TreeHitSfx" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_d50k7")
+bus = &"SFX"

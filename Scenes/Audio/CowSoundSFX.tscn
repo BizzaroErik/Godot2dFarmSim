@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bub16opqtysba"]
+
+[ext_resource type="AudioStream" uid="uid://bg30igflp6wsc" path="res://Assets/Audio/Cow 1.mp3" id="1_vcmkn"]
+
+[node name="CowSoundSFX" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_vcmkn")
+autoplay = true
+bus = &"SFX"

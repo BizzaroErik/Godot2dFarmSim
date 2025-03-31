@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://576yxgx2hxfh"]
+
+[ext_resource type="AudioStream" uid="uid://dygsn02ws2kgr" path="res://Assets/Audio/Positive Orchestral Theme #2.wav" id="1_85qi1"]
+
+[node name="OnTheFarmMusic" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_85qi1")
+autoplay = true
+bus = &"Music"

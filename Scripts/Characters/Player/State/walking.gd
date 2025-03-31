@@ -3,6 +3,10 @@ extends State
 @export var idle_state: State
 @export var jumping_state: State
 
+var movement_sound = preload("res://Scenes/Audio/SandSteps.tscn")
+var movement_sound_timer = preload("res://Scenes/Components/AudioPlayTimer.tscn")
+var loaded_sound: AudioStreamPlayer2D
+var sound_timer: AudioPlayTimer
 const WALK_SPEED = 5.0
 const SPRINT_SPEED = 10.0
 const SPEED = 70.0
@@ -11,9 +15,14 @@ const JUMP_VELOCITY = 6.5
 
 func enter() -> void:
 	set_animation(character.look_dir)
+	set_audio()
+	
 
 func exit() -> void:
 	sprite.stop()
+	loaded_sound.stop()
+	loaded_sound.queue_free()
+	sound_timer.queue_free()
 
 func process_input(event: InputEvent) -> State:
 	return null
@@ -49,3 +58,12 @@ func set_animation(direction) -> void:
 			sprite.play("walk_left")
 		Vector2.RIGHT:
 			sprite.play("walk_right")
+			
+func set_audio() -> void:
+	loaded_sound = movement_sound.instantiate() as AudioStreamPlayer2D
+	sound_timer = movement_sound_timer.instantiate() as AudioPlayTimer
+	get_parent().add_child(loaded_sound)
+	get_parent().add_child(sound_timer)
+	sound_timer.set_audio_stream_player(loaded_sound)
+	sound_timer.wait_time = 0.4
+	sound_timer.start()

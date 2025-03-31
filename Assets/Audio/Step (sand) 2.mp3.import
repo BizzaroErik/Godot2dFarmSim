@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dy86eobqggqpt"
+path="res://.godot/imported/Step (sand) 2.mp3-a9465906b986f04fe5ce5cb1a2428da7.mp3str"
+
+[deps]
+
+source_file="res://Assets/Audio/Step (sand) 2.mp3"
+dest_files=["res://.godot/imported/Step (sand) 2.mp3-a9465906b986f04fe5ce5cb1a2428da7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

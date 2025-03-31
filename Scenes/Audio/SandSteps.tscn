@@ -1,0 +1,18 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2q0733yhuwo"]
+
+[ext_resource type="AudioStream" uid="uid://c5l8c6sqt3di1" path="res://Assets/Audio/Step (sand) 1.mp3" id="1_hebxw"]
+[ext_resource type="AudioStream" uid="uid://dy86eobqggqpt" path="res://Assets/Audio/Step (sand) 2.mp3" id="2_ggnnk"]
+[ext_resource type="AudioStream" uid="uid://dyabnvy8pxqnn" path="res://Assets/Audio/Step (sand) 3.mp3" id="3_xb762"]
+[ext_resource type="AudioStream" uid="uid://xv8jaqeoyexg" path="res://Assets/Audio/Step (sand) 4.mp3" id="4_u38n0"]
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_na8a8"]
+streams_count = 4
+stream_0/stream = ExtResource("1_hebxw")
+stream_1/stream = ExtResource("2_ggnnk")
+stream_2/stream = ExtResource("3_xb762")
+stream_3/stream = ExtResource("4_u38n0")
+
+[node name="SandSteps" type="AudioStreamPlayer2D"]
+stream = SubResource("AudioStreamRandomizer_na8a8")
+autoplay = true
+bus = &"SFX"
